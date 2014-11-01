@@ -8,7 +8,7 @@
 	
 	<!-- Styles -->
 	<style type="text/css">
-	  html, body, #map-canvas { height: 100%; margin: 0; padding: 0;}
+	  html, body, #map-canvas { height: 10%; margin: 0; padding: 0;}
 	</style>
 	
 	
@@ -196,7 +196,7 @@
 		for (var i=0,j=pubs.length;i<j;i++) {
 			if (atoz.indexOf(pubs[i].PubName) == -1) {
 				atoz.push(pubs[i].PubName);
-				console.log("add");
+			
 			}
 		}
 		atoz.sort();
@@ -218,8 +218,16 @@
 			count.push(temp);
 		}
 
-		
+document.write("<ul>");
 
+for (var i=0,j=count.length;i<j;i++) {
+//document.write("<tr>");
+document.write("<li>" + count[i].name + "</li>");
+//document.write("<td>" + count[i].count + "</td>");
+//document.write("</tr>");
+} 
+
+document.write("</ul>");
 		
 	</script>
 	

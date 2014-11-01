@@ -8,7 +8,7 @@
 	
 	<!-- Styles -->
 	<style type="text/css">
-	  html, body, #map-canvas { height: 100%; margin: 0; padding: 0;}
+	  html, body, #map-canvas { height: 10%; margin: 0; padding: 0;}
 	</style>
 	
 	
@@ -172,23 +172,23 @@
 
 		var data = [];
 		//for (var i=0,(j=pubs.length);i<j;i++) {
-			
-			$.ajax({
-				url: "https://maps.googleapis.com/maps/api/place/nearbysearch/json",
-				dataType: "jsonp",
-				jsonp: "hackit",
-				data: {
-					"key": "AIzaSyB2Uih6XwsOeEBaEquyNJljXzTbS4WaCCo",
-					"location": "53.3836,-1.4669",
-					"radius": 3000,
-					"keyword": pubs[0].PubName + ", sheffield",
-					"callback": "hello"
-				},
-				error: function (d) {
-					data.push(d);
-				}
-			});
-			
+		//	
+		//	$.ajax({
+		//		url: "https://maps.googleapis.com/maps/api/place/nearbysearch/json",
+		//		dataType: "jsonp",
+		//		jsonp: "hackit",
+		//		data: {
+		//			"key": "AIzaSyB2Uih6XwsOeEBaEquyNJljXzTbS4WaCCo",
+		//			"location": "53.3836,-1.4669",
+		//			"radius": 3000,
+		//			"keyword": pubs[0].PubName + ", sheffield",
+		//			"callback": "hello"
+		//		},
+		//		error: function (d) {
+		//			data.push(d);
+		//		}
+		//	});
+		//	
 		//}
 		
 		var atoz = [];		
@@ -196,7 +196,7 @@
 		for (var i=0,j=pubs.length;i<j;i++) {
 			if (atoz.indexOf(pubs[i].PubName) == -1) {
 				atoz.push(pubs[i].PubName);
-				console.log("add");
+			
 			}
 		}
 		atoz.sort();
@@ -218,8 +218,16 @@
 			count.push(temp);
 		}
 
-		
+document.write("<table>");
 
+for (var i=0,j=count.length;i<j;i++) {
+document.write("<tr>");
+document.write("<td>" + count[i].name + "</td>");
+//document.write("<td>" + count[i].count + "</td>");
+document.write("</tr>");
+} 
+
+document.write("</table>");
 		
 	</script>
 	
