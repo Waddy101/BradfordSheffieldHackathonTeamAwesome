@@ -29,17 +29,6 @@
 	</script>
 	
 </head>
-<body>
-	
-	<div id="map-canvas"></div>
-	
-	
-	<script>
-		
-		var data = 1;
-		// for (var i=0,j=data.length;i<j;i++) {
-			
-			$.ajax({
 				url: "https://maps.googleapis.com/maps/api/place/nearbysearch/json",
 				dataType: "jsonp",
 				jsonp: "hackit",
@@ -48,10 +37,11 @@
 					"location": "53.3836,-1.4669",
 					"radius": 3000,
 					"keyword": "Devonshire Cat, sheffield"
+				},
+				success: function ( d ) {
+					console.log(d);
+					data = d;
 				}
-			}).done(function (d) {
-				data = d;
-				console.log(d);
 			});
 			
 		// }
